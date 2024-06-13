@@ -10,13 +10,14 @@ import { Component, ElementRef, viewChild, viewChildren } from '@angular/core';
 export class QueriesComponent {
 
   h1 = viewChild<ElementRef<HTMLHeadingElement>>("titulo");
-  h2 = viewChild.required<ElementRef<HTMLHeadingElement>>("titulo");
-  soloLectura = viewChildren("soloLectura")
+  h2 = viewChild.required<ElementRef<HTMLHeadingElement>>("subtitulo");
+  soloLectura = viewChildren<ElementRef<HTMLHeadingElement>>("soloLectura");
 
   ngAfterViewInit() {
-    console.log(this.h1.name);
-    console.log(this.h2.name);
-    console.log(this.soloLectura);
+    this.h2().nativeElement.textContent = "Nuevo Valor asignado al subtitulo";
+    console.log(this.h1()?.nativeElement);
+    console.log(this.h2()?.nativeElement);
+    console.log(this.soloLectura());
   }
 
 }
