@@ -1,0 +1,10 @@
+.general-styles {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+}

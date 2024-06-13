@@ -1,0 +1,11 @@
+<div class="container d-flex justify-content-center mt-5">
+    <div>
+        Apretá el botón para cambiar la visibilidad del badge
+        <button mat-raised-button [matBadge]="badge()" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">
+            Esconder
+        </button>
+    </div>
+</div>
+<div class="container d-flex justify-content-center mt-5">
+    <output-child (sumar)="handleSumar()" (delete)="handleDelete($event)" />
+</div>
