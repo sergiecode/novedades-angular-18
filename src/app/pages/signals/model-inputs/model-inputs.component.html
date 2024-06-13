@@ -1,0 +1,11 @@
+<div class="container d-flex justify-content-center mt-5">
+    <input type="checkbox" (click)="toggle()" [value]="checked()">
+    <span>Acepta los términos y condiciones de aprender Angular 18</span>
+</div>
+
+<br>
+<br>
+
+<div class="container d-flex justify-content-center mt-5">
+    <p>El valor del checkbox es: <span [ngStyle]="{color: checked() ? 'green' : 'red'}">{{checked()}} </span></p>
+</div>
