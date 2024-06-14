@@ -1,0 +1,7 @@
+.background {
+    padding: 30px;
+    max-width: fit-content;
+    background-color: rgb(21, 21, 21);
+    border: 1px solid black;
+    border-radius: 5px;
+}
