@@ -1,0 +1,17 @@
+<div class="container d-flex justify-content-center mt-5">
+    @if (id() && id() != 3) {
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">El usuario es el {{id()}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Bienvenido a su detalle</h6>
+            <p class="card-text">Detalle del usuario seleccionado con contenido del perfil</p>
+            <a href="#" class="card-link">Más información</a>
+            <a href="#" class="card-link">Borrar Usuario</a>
+        </div>
+    </div>
+    } @else if (id () && id() == 3) {
+    <h1>El usuario ha sido eliminado</h1>
+    } @else {
+    <h1>No se ha seleccionado ningún usuario</h1>
+    }
+</div>
