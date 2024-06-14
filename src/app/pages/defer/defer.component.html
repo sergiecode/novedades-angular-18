@@ -1,0 +1,74 @@
+<mat-tab-group animationDuration="2000ms">
+    <mat-tab label="On Hover">
+        <div class="container d-flex justify-content-center align-items-center fondo">
+            @defer (on hover; prefetch on timer(10000)) {
+            <chart />
+            } @placeholder() {
+            <h1>Coloca el mouse aquí para cargar</h1>
+            } @loading(minimum 3000) {
+            <mat-spinner></mat-spinner>
+            } @error {
+            <p style="color: red;">Error
+            <p>
+                }
+        </div>
+    </mat-tab>
+    <mat-tab label="Second">
+        <div class="container d-flex justify-content-center align-items-center fondo">
+            <div>
+                @defer (when isVisible()) {
+                <chart />
+                } @placeholder() {
+                <h1>Por favor haz click en el botón</h1>
+                } @loading(minimum 3000) {
+                <mat-spinner></mat-spinner>
+                } @error {
+                <p style="color: red;">Error
+                <p>
+                    }
+                    @if (!isVisible()) {
+                <div class="d-flex justify-content-center">
+                    <button (click)="isVisible.set(true)" mat-fab aria-label="Show">
+                        <mat-icon>visibility</mat-icon>
+                    </button>
+                </div>
+                }
+            </div>
+        </div>
+
+    </mat-tab>
+    <mat-tab label="Third">
+        <div class="informacion">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ratione eaque autem reiciendis
+                numquam, dolorum iusto praesentium nesciunt ipsum eius quo, aspernatur tempore sed? Reprehenderit
+                voluptas architecto id esse odit!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni minus doloribus aliquam ratione ea!
+                Suscipit delectus aperiam amet eum, sit ratione cupiditate eius quos, dicta repellat dignissimos, quo
+                qui. Quam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam amet fuga officiis cum dolorem omnis
+                fugiat nemo ducimus reprehenderit praesentium odio, ex neque porro? Eius nulla architecto assumenda
+                voluptas quia?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi laudantium est eaque accusamus voluptatum,
+                consequatur sit, ab sequi magnam blanditiis provident aperiam deleniti quia, eius error adipisci hic
+                consectetur quaerat!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas est illo eveniet quia, velit unde. Rem
+                aliquid quae tempora quidem. Minus, mollitia. Ab rem laudantium, dolorum blanditiis architecto corrupti
+                reiciendis.</p>
+        </div>
+        <div class="container d-flex justify-content-center align-items-center fondo abajo">
+            <div>
+                @defer (on viewport) {
+                <chart />
+                } @placeholder() {
+                <h1>Comenzará a cargarse al verse</h1>
+                } @loading(minimum 3000) {
+                <mat-spinner></mat-spinner>
+                } @error {
+                <p style="color: red;">Error
+                <p>
+                    }
+            </div>
+
+        </div>
+    </mat-tab>
+</mat-tab-group>
